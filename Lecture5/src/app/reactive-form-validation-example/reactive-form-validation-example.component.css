@@ -1,0 +1,56 @@
+.button{
+    margin: 10px 0;
+    width: 100px;
+    padding: 5px;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button--update{
+    background: brown;
+}
+
+.form-item{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.validation-error{
+    color: red;
+}
+
+.invalid-button{
+    opacity: 50%;
+}
+
+
+/* -------------------------Control status CSS classes---------------------- */
+
+/* .ng-valid{
+    border: 3px solid rgb(12, 156, 55);
+} */
+/* .ng-valid:not(form){
+    border: 3px solid rgb(12, 156, 55);
+}
+.ng-invalid:not(form){
+    border: 3px solid red;
+}
+.ng-pristine:not(form){
+    border-right: 5px solid yellow;
+}
+.ng-dirty:not(form){
+    border-left: 5px solid rgb(39, 62, 196);
+}
+.ng-untouched:not(form){
+    border-top: 5px solid rgb(138, 140, 148);
+}
+.ng-touched:not(form){
+    border-bottom: 5px solid rgb(216, 100, 210);
+}
+.ng-submitted {
+    border: 3px solid rgb(226, 178, 74);
+} */

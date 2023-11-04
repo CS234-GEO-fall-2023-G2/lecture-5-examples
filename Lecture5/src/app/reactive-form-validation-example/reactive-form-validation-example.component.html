@@ -1,0 +1,115 @@
+<!-- --------------------Built-in validators --------------------- -->
+
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <div class="form-item">
+        <label for="title">Title</label>
+        <input type="text" formControlName="title">
+        <div style="color: red;">*</div>
+        <!-- <div class="validation-error" *ngIf="title.errors?.['required'] && title.touched">Mandatory field</div>
+        <div class="validation-error" *ngIf="title.touched && !title.valid">touched</div>
+        <div class="validation-error" *ngIf="title.dirty && !title.valid">dirty</div> -->
+    </div>
+
+    <div class="form-item">
+        <label for="author">Author</label>
+        <input type="text" formControlName="author">
+        <!-- <div class="validation-error" *ngIf="author.errors?.['required']">Mandatory field</div>
+        <div class="validation-error" *ngIf="author.errors?.['maxLength']">Max length 5</div> -->
+    </div>
+
+    <div class="form-item">
+        <label for="pages">Pages</label>
+        <input type="text" formControlName="pages">
+        <!-- <div class="validation-error" *ngIf="pages.errors?.['pattern']">Invalid field</div> -->
+    </div>
+
+    <select formControlName="language">
+        <option *ngFor="let language of languages" [ngValue]="language.name">
+            {{language.name}}
+        </option>
+    </select>
+
+    <div class="form-item">
+        <label for="pages">Is in stocke</label>
+        <input type="checkbox" formControlName="isInStocke">
+    </div>
+
+    <button [disabled]="!bookForm.valid" [ngClass]="{'invalid-button' : !bookForm.valid}" class="button" type="submit">submit</button>
+</form>
+
+
+
+
+
+
+
+
+<!-- --------------------Custom validators --------------------- -->
+
+<!-- <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <div class="form-item">
+        <label for="title">Title</label>
+        <input type="text" formControlName="title">
+        <div class="validation-error" *ngIf="title.errors?.['required']">Mandatory field</div>
+        <div class="validation-error" *ngIf="title.touched && !title.valid">touched</div>
+        <div class="validation-error" *ngIf="title.dirty && !title.valid">dirty</div>
+        <div class="validation-error" *ngIf="title.errors?.['forbiddenTitle'] && !title.valid">title can't be 'title'</div>
+    </div>
+
+    <div class="form-item">
+        <label for="author">Author</label>
+        <input type="text" formControlName="author">
+        <div class="validation-error" *ngIf="author.errors?.['required']">Mandatory field</div>
+        <div class="validation-error" *ngIf="author.errors?.['maxLength']">Max length 5</div>
+    </div>
+
+    <div class="form-item">
+        <label for="pages">Pages</label>
+        <input type="text" formControlName="pages">
+        <div class="validation-error" *ngIf="pages.errors?.['pattern']">Invalid field</div>
+    </div>
+
+    <button [disabled]="!bookForm.valid" [ngClass]="{'invalid-button' : !bookForm.valid}" class="button" type="submit">submit</button>
+</form> -->
+
+
+
+
+
+
+
+<!-- --------------------Cross-field validators --------------------- -->
+
+<!-- <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <div class="form-item">
+        <label for="title">Title</label>
+        <input type="text" formControlName="title">
+        <div class="validation-error" *ngIf="title.errors?.['required']">Mandatory field</div>
+        <div class="validation-error" *ngIf="title.touched && !title.valid">touched</div>
+        <div class="validation-error" *ngIf="title.dirty && !title.valid">dirty</div>
+        <div class="validation-error" *ngIf="title.errors?.['forbiddenTitle'] && !title.valid">title can't be 'title'</div>
+    </div>
+
+    <div class="form-item">
+        <label for="author">Author</label>
+        <input type="text" formControlName="author">
+        <div class="validation-error" *ngIf="author.errors?.['required']">Mandatory field</div>
+        <div class="validation-error" *ngIf="author.errors?.['maxLength']">Max length 5</div>
+    </div>
+
+    <div class="form-item">
+        <label for="author">Author2</label>
+        <input type="text" formControlName="author2">
+    </div>
+
+    <div class="validation-error" *ngIf="bookForm.errors?.['identicalAuthors']">identical authors error</div>
+
+
+    <div class="form-item">
+        <label for="pages">Pages</label>
+        <input type="text" formControlName="pages">
+        <div class="validation-error" *ngIf="pages.errors?.['pattern']">Invalid field</div>
+    </div>
+
+    <button [ngClass]="{'invalid-button' : !bookForm.valid}" class="button" type="submit">submit</button>
+</form> -->

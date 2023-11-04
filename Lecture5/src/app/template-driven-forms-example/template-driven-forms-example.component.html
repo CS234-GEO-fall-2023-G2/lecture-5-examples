@@ -1,0 +1,120 @@
+<!-- --------1--ngModel------------ -->
+s
+<div style="margin-bottom: 10px;">
+  <label for="title">Title</label>
+  <input type="text" [(ngModel)]="title">
+  <div>{{title}}</div>
+</div>
+
+<div style="margin-bottom: 10px;">
+  <label for="title2">Title2</label>
+  <input type="text" [ngModel]="title2">
+  <div>{{title2}}</div>
+</div>
+
+<div style="margin-bottom: 10px;">
+  <label for="title3">Title3</label>
+  <input type="text" ngModel>
+  <div>{{title3}}</div>
+</div>
+
+
+
+<!-- --------2--ngForm------------ -->
+<!-- <form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)">
+    <div class="form-item">
+        <label for="title">Title</label>
+        <input name="title" type="text" ngModel>
+    </div>
+
+    <div class="form-item">
+        <label for="author">Author</label>
+        <input name="author" type="text" ngModel>
+    </div>
+
+    <div class="form-item">
+        <label for="pages">Pages</label>
+        <input name="text" type="text" ngModel>
+    </div>
+    <button class="button" type="submit">submit</button>
+</form> -->
+
+
+<!-- --------3--NgModelGroup------------ -->
+<!-- <form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)">
+  <div class="form-item">
+      <label for="title">Title</label>
+      <input name="title" type="text" ngModel>
+  </div>
+
+  <div class="form-item">
+      <label for="author">Author</label>
+      <input name="author" type="text"  ngModel>
+  </div>
+
+  <div class="form-item">
+      <label for="pages">Pages</label>
+      <input name="text" type="text"  ngModel>
+  </div>
+
+  <div ngModelGroup="address" #addresses="ngModelGroup">
+    <div class="form-item">
+      <label for="pages">City</label>
+      <input type="text" name="city" ngModel>
+    </div>
+    <div class="form-item">
+      <label for="pages">Street</label>
+      <input type="text" name="street" ngModel>
+    </div>
+  </div>
+  <button class="button" type="submit">submit</button>
+</form> -->
+
+
+<!-- --------4--ngForm------------ -->
+<!-- <form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)">
+  <div class="form-item">
+      <label for="title">Title</label>
+      <input name="title" type="text" [(ngModel)]="model.title">
+  </div>
+
+  <div class="form-item">
+      <label for="author">Author</label>
+      <input name="author" type="text"  [(ngModel)]="model.author">
+  </div>
+
+  <div class="form-item">
+      <label for="pages">Pages</label>
+      <input name="text" type="text"  [(ngModel)]="model.pages">
+  </div>
+  <button class="button" type="submit">submit</button>
+</form> -->
+
+
+
+<!-- --------5--control states------------ -->
+<!-- <form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)">
+  <div class="form-item">
+      <label for="title">Title</label>
+      <input name="title" type="text" [(ngModel)]="model.title" #title="ngModel" required>
+      <div *ngIf="title.touched">touched</div>
+      <div *ngIf="title.dirty">dirty</div>
+      <div *ngIf="title.valid">valid</div>
+  </div>
+
+  <div class="form-item">
+      <label for="author">Author</label>
+      <input name="author" type="text"  [(ngModel)]="model.author" #author="ngModel" required>
+      <div *ngIf="author.touched">touched</div>
+      <div *ngIf="author.dirty">dirty</div>
+      <div *ngIf="author.valid">valid</div>
+  </div>
+
+  <div class="form-item">
+      <label for="pages">Pages</label>
+      <input name="text" type="text"  ngModel #pages="ngModel" required maxlength="3">
+      <div style="color: red;">*</div>
+      <div *ngIf="pages.errors?.['required'] && pages.touched" style="color: red;">mandatory field</div>
+  </div>
+  <button class="button" type="submit">submit</button>
+</form> -->
